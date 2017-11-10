@@ -14,34 +14,12 @@ router.post("/", function(req, res, next) {
       res.status(200);
       res.json({
         message: data.randNum,
-        url: data.url,
-        localHost: data.localHost + data.url
+        url: data.url
       });
     }
   });
 
 });
-
-
-// GET /url
-// Return all url collection
-router.get("/", function(req, res, next) {
-
-	url.find({})
-  .exec(function(err, urls) {
-    if (err) return next(err);
-    res.json(urls);
-  });
-
-});
-
-
-
-
-
-// url.shorten('', function(err, url) {
-//   console.log(url);
-// });
 
 
 

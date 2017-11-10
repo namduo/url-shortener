@@ -1,14 +1,7 @@
 
 
-function shortenUrl() {
-	return ;
-}
-
-
-
 $('.btn-shorten').on('click', function(){
 
-	var shorten_url = shortenUrl();
 
 
   $.ajax({
@@ -20,8 +13,10 @@ $('.btn-shorten').on('click', function(){
 
       console.log(data);
         // display the shortened URL
-        var shortUrl = '<a class="result" href="' + data.url + '" target="_blank">'
-            + data.message + '</a>';
+				var shortUrl = data.message;
+
+				// var shortUrl = '<a class="result" href="' + data.url + '" target="_blank">'
+        //     + data.message + '</a>';
 
         $('#link').html(shortUrl);
         $('#link').hide().fadeIn('slow');
